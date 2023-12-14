@@ -11,3 +11,5 @@
 #if !defined(DPP_WIN_TEMPLATE) && !defined(DPP_CI)
 	#error "You must compile this template using its .sln file. You cannot just double click the .cpp file and compile it on its own. Ensure you checked out the full source code of the template!"
 #endif
+
+#include "DiscordToken.hpp"

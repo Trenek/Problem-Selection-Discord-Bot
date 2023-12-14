@@ -43,14 +43,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -187,9 +187,24 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="freeTask.cpp" />
+    <ClCompile Include="insertMembers.cpp" />
     <ClCompile Include="MyBot.cpp" />
+    <ClCompile Include="onButtonClick.cpp" />
+    <ClCompile Include="onFormSubmit.cpp" />
+    <ClCompile Include="onReady.cpp" />
+    <ClCompile Include="onSlashCommand.cpp" />
+    <ClCompile Include="query.cpp" />
+    <ClCompile Include="showExercises.cpp" />
+    <ClCompile Include="showMarket.cpp" />
+    <ClCompile Include="showMembers.cpp" />
+    <ClCompile Include="showMessage.cpp" />
+    <ClCompile Include="updateExercises.cpp" />
+    <ClCompile Include="updateMessage.cpp" />
+    <ClCompile Include="updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="define.hpp" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\appcommand.h" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\application.h" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\auditlog.h" />
@@ -276,7 +291,16 @@
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\webhook.h" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\win32_safe_warnings.h" />
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\wsclient.h" />
+    <ClInclude Include="discordBot.hpp" />
+    <ClInclude Include="DiscordToken.hpp" />
+    <ClInclude Include="freeTask.hpp" />
+    <ClInclude Include="insert.hpp" />
     <ClInclude Include="MyBot.h" />
+    <ClInclude Include="query.hpp" />
+    <ClInclude Include="show.hpp" />
+    <ClInclude Include="sqlQueries.hpp" />
+    <ClInclude Include="update.hpp" />
+    <ClInclude Include="updater.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

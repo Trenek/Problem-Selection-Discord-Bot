@@ -25,10 +25,76 @@
     <Filter Include="DPP\nlohmann">
       <UniqueIdentifier>{4e785253-c8f4-4617-bf4a-f3e8a739dc05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\DiscordBot">
+      <UniqueIdentifier>{e94cc1bb-17ee-4143-842a-d8ba5d7603e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL">
+      <UniqueIdentifier>{46fe1679-f4ea-47ad-ab9d-750008293b3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\updater">
+      <UniqueIdentifier>{2166ce8d-14a8-4453-a531-9ecb587590a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL\free">
+      <UniqueIdentifier>{fe6a1b0f-6b14-4cbf-98f7-55e480a36dbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL\insert">
+      <UniqueIdentifier>{8514cdd5-92ae-4a58-8d1b-6554e3d1b43a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL\query">
+      <UniqueIdentifier>{8d7ce5dd-0615-4d89-b8ab-7a0fe2cb882c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL\show">
+      <UniqueIdentifier>{ade25a05-d073-45e1-bfd7-bed983bf0f08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL\update">
+      <UniqueIdentifier>{22fe6620-9cbb-497e-b5e4-70676f2cde5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyBot.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="freeTask.cpp">
+      <Filter>Source Files\SQL\free</Filter>
+    </ClCompile>
+    <ClCompile Include="insertMembers.cpp">
+      <Filter>Source Files\SQL\insert</Filter>
+    </ClCompile>
+    <ClCompile Include="query.cpp">
+      <Filter>Source Files\SQL\query</Filter>
+    </ClCompile>
+    <ClCompile Include="showExercises.cpp">
+      <Filter>Source Files\SQL\show</Filter>
+    </ClCompile>
+    <ClCompile Include="showMarket.cpp">
+      <Filter>Source Files\SQL\show</Filter>
+    </ClCompile>
+    <ClCompile Include="showMembers.cpp">
+      <Filter>Source Files\SQL\show</Filter>
+    </ClCompile>
+    <ClCompile Include="showMessage.cpp">
+      <Filter>Source Files\SQL\show</Filter>
+    </ClCompile>
+    <ClCompile Include="updateExercises.cpp">
+      <Filter>Source Files\SQL\update</Filter>
+    </ClCompile>
+    <ClCompile Include="updateMessage.cpp">
+      <Filter>Source Files\SQL\update</Filter>
+    </ClCompile>
+    <ClCompile Include="onReady.cpp">
+      <Filter>Source Files\DiscordBot</Filter>
+    </ClCompile>
+    <ClCompile Include="onSlashCommand.cpp">
+      <Filter>Source Files\DiscordBot</Filter>
+    </ClCompile>
+    <ClCompile Include="onButtonClick.cpp">
+      <Filter>Source Files\DiscordBot</Filter>
+    </ClCompile>
+    <ClCompile Include="onFormSubmit.cpp">
+      <Filter>Source Files\DiscordBot</Filter>
+    </ClCompile>
+    <ClCompile Include="updater.cpp">
+      <Filter>Source Files\updater</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +358,36 @@
     </ClInclude>
     <ClInclude Include="dependencies\include\dpp-10.0\dpp\nlohmann\json_fwd.hpp">
       <Filter>DPP\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="DiscordToken.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="define.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="freeTask.hpp">
+      <Filter>Source Files\SQL\free</Filter>
+    </ClInclude>
+    <ClInclude Include="insert.hpp">
+      <Filter>Source Files\SQL\insert</Filter>
+    </ClInclude>
+    <ClInclude Include="query.hpp">
+      <Filter>Source Files\SQL\query</Filter>
+    </ClInclude>
+    <ClInclude Include="show.hpp">
+      <Filter>Source Files\SQL\show</Filter>
+    </ClInclude>
+    <ClInclude Include="update.hpp">
+      <Filter>Source Files\SQL\update</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlQueries.hpp">
+      <Filter>Source Files\SQL</Filter>
+    </ClInclude>
+    <ClInclude Include="discordBot.hpp">
+      <Filter>Source Files\DiscordBot</Filter>
+    </ClInclude>
+    <ClInclude Include="updater.hpp">
+      <Filter>Source Files\updater</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

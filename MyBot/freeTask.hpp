@@ -1,0 +1,1 @@
+void freeTask(const char* name, int id);
