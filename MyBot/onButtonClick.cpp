@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <dpp/dpp.h>
 #include <dpp/unicode_emoji.h>
 
@@ -6,34 +8,22 @@
 void onButtonClick(const dpp::button_click_t& event) {
     extern dpp::cluster* bot;
 
-#ifdef TEST
-    if (event.custom_id == "countIDTEST") {
-#else
-    if (event.custom_id == "countIDNO") {
-#endif // TEST
-        event.thinking();
-        dpp::message message = bot->message_get_sync(event.command.message_id, event.command.channel_id);
-        dpp::user_map map = bot->message_get_reactions_sync(message, dpp::unicode_emoji::pray, 0, 0, 0);
-        int i = 0;
+    if (event.custom_id == "countID") {
+        if (login(event.command.get_issuing_user().id.str().c_str())) {
+            event.thinking();
+            dpp::message message = bot->message_get_sync(event.command.message_id, event.command.channel_id);
+            dpp::user_map map = bot->message_get_reactions_sync(message, dpp::unicode_emoji::pray, 0, 0, 0);
 
-        QUERY("UPDATE [Wybraniec] SET [Status] = 'S' \
-                UPDATE [MatematykaDyskretna].dbo.[Wybraniec] \
-                SET [Status] = 'Z' \
-                FROM [Zadania] \
-                RIGHT OUTER JOIN [Wybraniec] ON [Zadania].[Wybraniec] = [Wybraniec].[DiscordID] \
-                WHERE [Zadania].[Tura] = 'Z'");
-        for (std::pair<const dpp::snowflake, dpp::user> user : map) {
-            INSERT_MEMBERS(user.second.username.c_str(), user.second.id.str().c_str());
+            QUERY("EXECUTE [BeforeInsert]");
+            for (std::pair<const dpp::snowflake, dpp::user> user : map) {
+                INSERT_MEMBERS(user.second.id.str().c_str(), user.second.username.c_str());
+            }
+            QUERY("EXECUTE [AfterInsert]");
+            event.edit_original_response(SHOW_MEMBERS());
         }
-        QUERY("DELETE FROM [Wybraniec] WHERE [Status] = 'S' \
-                ;WITH NewSequence AS \
-                ( \
-                SELECT ID, ROW_NUMBER() OVER(ORDER BY ID) as ID_New \
-                FROM [MatematykaDyskretna].dbo.[Wybraniec] \
-                ) \
-                UPDATE NewSequence \
-                SET ID = ID_New; ");
-        event.edit_original_response(SHOW_MEMBERS());
+        else {
+            event.reply(dpp::message("Nie wolno Ci :(").set_flags(dpp::m_ephemeral));
+        }
     }
     else if (event.custom_id == "backoutid") {
         dpp::interaction_modal_response modal("modal_backout", "Wybierz zadanie");
@@ -115,4 +105,4 @@ void onButtonClick(const dpp::button_click_t& event) {
 
         event.dialog(modal);
     }
-    }
+}

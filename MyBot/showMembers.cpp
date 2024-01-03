@@ -4,13 +4,13 @@
 
 std::string SHOW_MEMBERS(SQLHANDLE SQLStatementHandle) {
     int ID = 0;
-    char DiscordID[128];
+    long long int DiscordID = 0;
     char wybraniec[25];
     char buffor[2048];
     char status[2];
 
-    sprintf(buffor, "`+----+----------------+----------------`\n");
-    sprintf(buffor, "%s`| ID | %-14s | Ping           `\n", buffor, "Nick");
+    sprintf(buffor,   "`+----+----------------+----------------`\n");
+    sprintf(buffor, "%s`| ID | %-14s | %-14s `\n", buffor, "Nick", "Wzmianka");
     sprintf(buffor, "%s`+----+----------------+----------------`", buffor);
 
     while (SQLFetch(SQLStatementHandle) == SQL_SUCCESS) {
@@ -21,8 +21,7 @@ std::string SHOW_MEMBERS(SQLHANDLE SQLStatementHandle) {
         SQLGetData(SQLStatementHandle, 3, SQL_C_DEFAULT, &wybraniec, sizeof(wybraniec), NULL);
         SQLGetData(SQLStatementHandle, 4, SQL_C_DEFAULT, &status, sizeof(status), NULL);
 
-
-        sprintf(buffor, "%s\n`| %2i | %-14.14s | `<@%s>", buffor, ID, wybraniec, DiscordID);
+        sprintf(buffor, "%s\n`| %2i | %-14.14s | `<@%lld>", buffor, ID, wybraniec, DiscordID);
     }
     sprintf(buffor, "%s\n`+----+----------------+----------------`", buffor);
 
@@ -30,5 +29,5 @@ std::string SHOW_MEMBERS(SQLHANDLE SQLStatementHandle) {
 }
 
 std::string SHOW_MEMBERS() {
-    return QUERY("SELECT [ID], [DiscordID], [Nick], [Status] FROM [Wybraniec] ORDER BY [ID]", SHOW_MEMBERS);
+    return QUERY("EXECUTE [ShowMembers]", SHOW_MEMBERS);
 }

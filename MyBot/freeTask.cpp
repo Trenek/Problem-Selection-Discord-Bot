@@ -2,11 +2,10 @@
 
 #include "query.hpp"
 
-void freeTask(const char* name, int id) {
+void freeTask(const char* DiscordID, int IDZadania) {
     char SQLQuery[1024];
 
-    sprintf(SQLQuery, "UPDATE [Zadania] SET [Wybraniec] = NULL, [Tura] = NULL WHERE [Wybraniec] = '%s' AND [ID] = %i \
-                        UPDATE [DataBase] SET [Updated] = 1", name, id);
+    sprintf(SQLQuery, "EXECUTE [FreeTask] %s, %i", DiscordID, IDZadania);
 
     QUERY(SQLQuery);
 }

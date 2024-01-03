@@ -1,6 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "query.hpp"
 
-/**
 std::string showMarket(SQLHANDLE SQLStatementHandle) {
     int osoba = 0;
     int posiadane = 0;
@@ -24,7 +25,5 @@ std::string showMarket(SQLHANDLE SQLStatementHandle) {
 }
 
 std::string showMarket() {
-    return QUERY(  "SELECT [Oferant], [Oferowane], [Chciane] \
-                    FROM [Market]", showMarket);
+    return QUERY("EXECUTE [ShowMarket]", showMarket);
 }
-/**/

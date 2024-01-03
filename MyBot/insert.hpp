@@ -1,1 +1,1 @@
-void INSERT_MEMBERS(const char name[], const char id[]);
+void INSERT_MEMBERS(const char id[], const char name[]);

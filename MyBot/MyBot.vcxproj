@@ -24,6 +24,7 @@
     <ProjectGuid>{3bcaa106-d9d9-43ab-af92-01c943f4fec2}</ProjectGuid>
     <RootNamespace>MyBot</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Problem Selection Bot</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -189,19 +190,27 @@
   <ItemGroup>
     <ClCompile Include="freeTask.cpp" />
     <ClCompile Include="insertMembers.cpp" />
+    <ClCompile Include="liczba_tur.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="MyBot.cpp" />
+    <ClCompile Include="myTaskSets.cpp" />
     <ClCompile Include="onButtonClick.cpp" />
     <ClCompile Include="onFormSubmit.cpp" />
     <ClCompile Include="onReady.cpp" />
     <ClCompile Include="onSlashCommand.cpp" />
+    <ClCompile Include="prezapisy.cpp" />
     <ClCompile Include="query.cpp" />
+    <ClCompile Include="show.cpp" />
     <ClCompile Include="showExercises.cpp" />
     <ClCompile Include="showMarket.cpp" />
     <ClCompile Include="showMembers.cpp" />
-    <ClCompile Include="showMessage.cpp" />
+    <ClCompile Include="showRounds.cpp" />
     <ClCompile Include="updateExercises.cpp" />
     <ClCompile Include="updateMessage.cpp" />
     <ClCompile Include="updater.cpp" />
+    <ClCompile Include="updateRound.cpp" />
+    <ClCompile Include="wszyscy.cpp" />
+    <ClCompile Include="wymiana.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.hpp" />
@@ -295,10 +304,13 @@
     <ClInclude Include="DiscordToken.hpp" />
     <ClInclude Include="freeTask.hpp" />
     <ClInclude Include="insert.hpp" />
+    <ClInclude Include="login.hpp" />
     <ClInclude Include="MyBot.h" />
+    <ClInclude Include="onSlashCommand.hpp" />
     <ClInclude Include="query.hpp" />
     <ClInclude Include="show.hpp" />
     <ClInclude Include="sqlQueries.hpp" />
+    <ClInclude Include="stack.hpp" />
     <ClInclude Include="update.hpp" />
     <ClInclude Include="updater.hpp" />
   </ItemGroup>

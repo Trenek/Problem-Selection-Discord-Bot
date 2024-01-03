@@ -1,4 +1,4 @@
-#include <dpp/dpp.h>
+﻿#include <dpp/dpp.h>
 #include <thread>
 
 #include "MyBot.h"
@@ -11,9 +11,9 @@ dpp::cluster* bot;
 int main() {
     std::thread updateServer(updater);
     dpp::cluster bot(BOT_TOKEN, dpp::i_guilds |
-        dpp::i_guild_members |
-        dpp::i_guild_messages |
-        dpp::i_guild_message_reactions
+                                dpp::i_guild_members |
+                                dpp::i_guild_messages |
+                                dpp::i_guild_message_reactions
     );
     ::bot = &bot;
 

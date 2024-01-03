@@ -35,7 +35,5 @@ std::string SHOW(SQLHANDLE SQLStatementHandle) {
 }
 
 std::string SHOW() {
-    return QUERY("SELECT [Zadania].[ID], [NrZadania], [Podpunkt], [Nick], [Tura] \
-                    FROM [Zadania] LEFT OUTER JOIN[Wybraniec] \
-                    ON [Zadania].[Wybraniec] = [Wybraniec].DiscordID", SHOW);
+    return QUERY("EXECUTE [ShowTasks]", SHOW);
 }

@@ -25,7 +25,7 @@ void onFormSubmit(const dpp::form_submit_t& event) {
 
         event.reply();
 
-        UPDATE(number + 1, event.command.get_issuing_user().id.str().c_str(), atoi(std::get<std::string>(event.components[0].components[0].value).c_str()), 12, number);
+        UPDATE(event.command.get_issuing_user().id.str().c_str(), number + 1, atoi(std::get<std::string>(event.components[0].components[0].value).c_str()));
         update = true;
     }
 }

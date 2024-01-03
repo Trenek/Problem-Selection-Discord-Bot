@@ -49,6 +49,12 @@
     <Filter Include="Source Files\SQL\update">
       <UniqueIdentifier>{22fe6620-9cbb-497e-b5e4-70676f2cde5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SQL\login">
+      <UniqueIdentifier>{a8642729-6fe3-4dd6-a031-81a51c38482c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DiscordBot\onSlashCommand">
+      <UniqueIdentifier>{b9eaa336-7d97-449a-8b81-47f2abfe26a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyBot.cpp">
@@ -72,9 +78,6 @@
     <ClCompile Include="showMembers.cpp">
       <Filter>Source Files\SQL\show</Filter>
     </ClCompile>
-    <ClCompile Include="showMessage.cpp">
-      <Filter>Source Files\SQL\show</Filter>
-    </ClCompile>
     <ClCompile Include="updateExercises.cpp">
       <Filter>Source Files\SQL\update</Filter>
     </ClCompile>
@@ -82,9 +85,6 @@
       <Filter>Source Files\SQL\update</Filter>
     </ClCompile>
     <ClCompile Include="onReady.cpp">
-      <Filter>Source Files\DiscordBot</Filter>
-    </ClCompile>
-    <ClCompile Include="onSlashCommand.cpp">
       <Filter>Source Files\DiscordBot</Filter>
     </ClCompile>
     <ClCompile Include="onButtonClick.cpp">
@@ -95,6 +95,36 @@
     </ClCompile>
     <ClCompile Include="updater.cpp">
       <Filter>Source Files\updater</Filter>
+    </ClCompile>
+    <ClCompile Include="login.cpp">
+      <Filter>Source Files\SQL\login</Filter>
+    </ClCompile>
+    <ClCompile Include="onSlashCommand.cpp">
+      <Filter>Source Files\DiscordBot</Filter>
+    </ClCompile>
+    <ClCompile Include="show.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="prezapisy.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="wszyscy.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="updateRound.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="liczba_tur.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="wymiana.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="myTaskSets.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="showRounds.cpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -388,6 +418,15 @@
     </ClInclude>
     <ClInclude Include="updater.hpp">
       <Filter>Source Files\updater</Filter>
+    </ClInclude>
+    <ClInclude Include="login.hpp">
+      <Filter>Source Files\SQL\login</Filter>
+    </ClInclude>
+    <ClInclude Include="onSlashCommand.hpp">
+      <Filter>Source Files\DiscordBot\onSlashCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
