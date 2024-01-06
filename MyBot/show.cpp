@@ -5,7 +5,7 @@
 
 #include "sqlQueries.hpp"
 
-int addComponent(SQLHANDLE SQLStatementHandle, dpp::message* message) {
+int addComponent(SQLHANDLE SQLStatementHandle, void* message) {
     int row = -1;
     int quantity = 1;
     int nrTury = 0;
@@ -17,6 +17,7 @@ int addComponent(SQLHANDLE SQLStatementHandle, dpp::message* message) {
     int startM = 0;
     int endH = 0;
     int endM = 0;
+    dpp::message* Message = (dpp::message*)message;
 
     while (SQLFetch(SQLStatementHandle) == SQL_SUCCESS) {
         SQLGetData(SQLStatementHandle, 1, SQL_C_DEFAULT, &nrTury, sizeof(nrTury), NULL);
@@ -31,11 +32,11 @@ int addComponent(SQLHANDLE SQLStatementHandle, dpp::message* message) {
         sprintf(id, "myid%i", nrTury);
 
         if (quantity % 5 == 1) {
-            message->add_component(dpp::component());
+            Message->add_component(dpp::component());
             row += 1;
         }
 
-        message->components.at(row).add_component(
+        Message->components.at(row).add_component(
             dpp::component().
             set_label(label).
             set_type(dpp::cot_button).
@@ -60,7 +61,7 @@ void show(const dpp::slashcommand_t& event) {
 
     event.reply(message);
 
-    QUERY("EXECUTE [AddComponents]", addComponent, &message);
+    QUERY("EXECUTE [AddComponents]", addComponent, (void*)&message);
 
     message.set_content(SHOW());
 

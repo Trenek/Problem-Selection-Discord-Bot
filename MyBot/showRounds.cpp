@@ -30,38 +30,16 @@ std::string showRounds(SQLHANDLE SQLStatementHandle) {
 
         switch (kolor) {
             case 1:
-                color = "    ";
-                color[0] = 0xF0;
-                color[1] = 0x9F;
-                color[2] = 0x92;
-                color[3] = 0x99;
-                color[4] = 0;
+                color = "\xF0\x9F\x92\x99\x00";
                 break;
             case 2:
-                color = "    ";
-                color[0] = 0xF0;
-                color[1] = 0x9F;
-                color[2] = 0xA4;
-                color[3] = 0x8D;
-                color[4] = 0;
+                color = "\xF0\x9F\xA4\x8D\x00";
                 break;
             case 3:
-                color = "    ";
-                color[0] = 0xF0;
-                color[1] = 0x9F;
-                color[2] = 0x92;
-                color[3] = 0x9A;
-                color[4] = 0;
+                color = "\xF0\x9F\x92\x9A\x00";
                 break;
             case 4:
-                color = "      ";
-                color[0] = 0xE2;
-                color[1] = 0x9D;
-                color[2] = 0xA4;
-                color[3] = 0xEF;
-                color[4] = 0xB8;
-                color[5] = 0x8F;
-                color[6] = 0;
+                color = "\xE2\x9D\xA4\xEF\xB8\x8F\x00";
                 break;
         }
         sprintf(buffor, "%s| %2i | %02i:%02i | %02i:%02i  | %s    | %s  \n", buffor, nrTury, startH, startM, endH, endM, color.c_str(), emoji);

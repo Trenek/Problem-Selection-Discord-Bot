@@ -8,7 +8,7 @@ std::string SHOW(SQLHANDLE SQLStatementHandle) {
     char podpunkt[2];
     char wybraniec[512];
     char tura[2];
-    char buffor[4096];
+    char buffor[2048];
 
     sprintf(buffor, "`+----+-----+---+----------------+\n");
     sprintf(buffor, "%s| ID | Nr  | T | Wybraniec      |\n", buffor);

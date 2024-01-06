@@ -6,7 +6,7 @@ std::string showMarket(SQLHANDLE SQLStatementHandle) {
     int osoba = 0;
     int posiadane = 0;
     int szukane = 0;
-    char buffor[4096];
+    char buffor[2048];
 
     sprintf(buffor,  "`+---------+-----------+---------+\n");
     sprintf(buffor, "%s| Oferant | Oferowane | Chciane |\n", buffor);

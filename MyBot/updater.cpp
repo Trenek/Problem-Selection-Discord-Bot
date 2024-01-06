@@ -2,8 +2,9 @@
 #include <chrono>
 
 #include "sqlQueries.hpp"
+#include "stack.hpp"
 
-int SHOW_MESSAGE(SQLHANDLE SQLStatementHandle, stack** base) {
+int SHOW_MESSAGE(SQLHANDLE SQLStatementHandle, void* base) {
     stack* first = NULL;
 
     while (SQLFetch(SQLStatementHandle) == SQL_SUCCESS) {
@@ -11,9 +12,9 @@ int SHOW_MESSAGE(SQLHANDLE SQLStatementHandle, stack** base) {
 
         SQLGetData(SQLStatementHandle, 1, SQL_C_DEFAULT, &first->messageID, sizeof(first->messageID), NULL);
         SQLGetData(SQLStatementHandle, 2, SQL_C_DEFAULT, &first->channelID, sizeof(first->channelID), NULL);
-        first->next = *base;
+        first->next = *(stack**)base;
 
-        *base = first;
+        *(stack**)base = first;
     }
 
     return 0;
@@ -32,7 +33,7 @@ void updater() {
         if (update) {
             update = false;
 
-            QUERY("EXECUTE [Updater]", SHOW_MESSAGE, &base);
+            QUERY("EXECUTE [Updater]", SHOW_MESSAGE, (void*)&base);
 
             while (base != NULL) {
                 bot->message_edit(bot->message_get_sync(base->messageID, base->channelID).set_content(SHOW()));
